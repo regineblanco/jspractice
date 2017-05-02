@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style>
+	
+	.save {
+		display: none;
+	}
+
+	textarea {
+		height: 100px;
+		width: 100%;
+	}
+
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="container well">
+
+	<h1>What's on your mind?</h1>
+	<p>Blah blah blah</p>
+
+	<h2>Comment</h2>
+	<p class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+	<button class="btn btn-primary edit">Edit</button>
+	<button class="btn btn-danger save">Save</button>
+
+</div>
+<script>
+
+	$(".edit").click(function(){
+
+		$(".save").show();
+
+		$(".comment").html("<textarea>" + $(".comment").text() + "</textarea>");
+	});
+
+	$(".save").click(function(){
+
+		$(".save").hide();
+
+		$(".comment").html($("textarea").val())
+
+	});
+
+
+	
+</script>
+</body>
+</html>

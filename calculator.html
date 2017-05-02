@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<style type="text/css">
+
+		h1, form {
+			text-align: center;
+		}
+
+		input {
+			padding: 5px 40px;
+			margin: 5px 5px;
+			border-radius: 8px;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Calculator</h1>
+	<form name="calc">
+		<input type="text" name="display">
+
+		<div class="row">
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				<input type="button" value="1" OnClick="calc.display.value+='1'"></input>
+				<input type="button" value="2" OnClick="calc.display.value+='2'"></input>
+				<input type="button" value="3" OnClick="calc.display.value+='3'"></input>
+				<input type="button" value="+" OnClick="calc.display.value+='+'"></input>
+			</div>
+
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				<input type="button" value="4" OnClick="calc.display.value+='4'"></input>
+				<input type="button" value="5" OnClick="calc.display.value+='5'"></input>
+				<input type="button" value="6" OnClick="calc.display.value+='6'"></input>
+				<input type="button" value="-" OnClick="calc.display.value+='-'"></input>
+			</div>
+
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				<input type="button" value="7" OnClick="calc.display.value+='7'"></input>
+				<input type="button" value="8" OnClick="calc.display.value+='8'"></input>
+				<input type="button" value="9" OnClick="calc.display.value+='9'"></input>
+				<input type="button" value="*" OnClick="calc.display.value+='*'"></input>
+			</div>
+
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				<input type="button" value="0" OnClick="calc.display.value+='0'"></input>
+				<input type="button" value="." OnClick="calc.display.value+='.'"></input>
+				<input type="button" value="/" OnClick="calc.display.value+='/'"></input>
+				<input type="button" value="=" OnClick="calc.display.value=eval(calc.display.value)"></input>
+			</div>
+		</div>
+</form>
+
+	<h1> Second Calculator</h1>
+	<input type="text" id="input">
+
+	<div class="row">
+		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+			<button onclick="insert(1)">1</button>
+			<button onclick="insert(2)">2</button>
+			<button onclick="insert(3)">3</button>
+			<button onclick="insert(+)">&plus;</button>
+		</div>
+
+		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+			<button onclick="insert(4)">4</button>
+			<button onclick="insert(5)">5</button>
+			<button onclick="insert(6)">6</button>
+			<button onclick="insert(-)">&minus;</button>
+		</div>
+
+		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+			<button onclick="insert(7)">7</button>
+			<button onclick="insert(8)">8</button>
+			<button onclick="insert(9)">9</button>
+			<button onclick="insert(*)">&times;</button>
+		</div>
+
+		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+			<button onclick="insert(0)">0</button>
+			<button onclick="insert(.)">.</button>
+			<button onclick="insert(/)">&divide;</button>
+			<button onclick="insert()">Clear</button>
+		</div>
+
+<script type="text/javascript">
+	
+	function
+	document.getElementById("input").onclick = function(){}
+
+</script>
+
+</body>
+</html>

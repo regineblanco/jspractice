@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	
+	#modal {
+		display: none;
+		position: fixed;
+		z-index: 1;
+		overflow: auto;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: 50%;
+		height: 50%;
+		background: rgba(0,0,0,0.4)
+	}
+
+	#modal-content {
+		background: #fefefe;
+		margin: 15% auto;
+		padding: 20px;
+		border: 1px solid #888;
+		width: 50%;
+	}
+
+	#close {
+		float: right;
+	}
+
+	#close:hover, #close:focus {
+		cursor: pointer;
+	}
+
+	</style>
+</head> 
+<body>
+
+	<h1 id="header">JS Practice</h1>
+
+	<button id="show">Show modal</button><br>
+
+	<div id="modal">
+		<div id="modal-content">
+			<span id="close">&times;</span>
+			<p>Modal content</p>
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript">
+
+	document.getElementById('show').onclick = function(){
+		document.getElementById('modal').style.display = "block";
+	}
+
+	document.getElementById('close').onclick = function(){
+		document.getElementById('modal').style.display = "none";
+	}
+
+</script>
+</html>

@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Singe Page Web App</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Dosis|Gloria+Hallelujah" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<link rel="stylesheet" type="text/css" href="one-page-web.css">
+
+</head>
+<body>
+
+<div class="container">
+	
+	<h1 class="text-center">What to do this week...</h1>
+	<div class="schedule row">
+		<div class="days col-xs-12 col-lg-2">
+			<h3>Monday</h3>
+			<input type="checkbox"><span id="1" onclick="getNum(1)">Write article</span><br>
+			<input type="checkbox"><span id="2" onclick="getNum(2)">Go to HR</span><br>
+			<input type="checkbox"><span id="3" onclick="getNum(3)">Lunch with friends</span><br>
+			<span id="addMon"><i class="fa fa-plus" aria-hidden="true"></i>
+			</span>
+		</div>
+
+		<div class="days col-xs-12 col-lg-2">
+			<h3>Tuesday</h3>
+			<input type="checkbox"><span id="4" onclick="getNum(4)">Jog</span><br>
+			<input type="checkbox"><span id="5" onclick="getNum(5)">Meditate</span><br>
+			<input type="checkbox"><span id="6" onclick="getNum(6)">Go to meet and greet</span><br>
+			<input type="checkbox"><span id="7" onclick="getNum(7)">Give dog a bath</span><br>
+			<i class="fa fa-plus" aria-hidden="true" id="addTues"></i>
+		</div>
+		
+		<div class="days col-xs-12 col-lg-2">
+			<h3>Wednesday</h3>
+			<input type="checkbox"><span id="8" onclick="getNum(8)">Attend bootcamp</span><br>
+			<input type="checkbox"><span id="9" onclick="getNum(9)">Lunch with classmates</span><br>
+			<input type="checkbox"><span id="10" onclick="getNum(10)">Carwash</span><br>
+			<i class="fa fa-plus" aria-hidden="true" id="addWed"></i>
+		</div>
+		
+		<div class="days col-xs-12 col-lg-2">
+			<h3>Thursday</h3>
+			<input type="checkbox"><span id="11" onclick="getNum(11)">Go to gym</span><br>
+			<input type="checkbox"><span id="12" onclick="getNum(12)">Pray</span><br>
+			<input type="checkbox"><span id="13" onclick="getNum(13)">Buy meds</span><br>
+			<input type="checkbox"><span id="14" onclick="getNum(14)">Go to book signing</span><br>
+			<input type="checkbox"><span id="15" onclick="getNum(15)">Do Javascript</span><br>
+			<i class="fa fa-plus" aria-hidden="true" id="addThurs"></i>
+		</div>
+		
+		<div class="days col-xs-12 col-lg-2">
+			<h3>Friday</h3>
+			<input type="checkbox"><span id="16" onclick="getNum(16)">Brunch with BFF</span><br>
+			<input type="checkbox"><span id="17" onclick="getNum(17)">Go to gym</span><br>
+			<input type="checkbox"><span id="18" onclick="getNum(18)">Write article</span><br>
+			<input type="checkbox"><span id="19" onclick="getNum(19)">Attend Wanderland</span><br>
+			<i class="fa fa-plus" aria-hidden="true" id="addFri"></i>
+		</div>
+
+		<div class="days col-xs-12 col-lg-2">
+			<div class="row">
+				<div class="weekend-one col-xs-12 col-lg-12">
+					<h3>Saturday</h3>
+					<input type="checkbox"><span id="20" onclick="getNum(20)">Go to Malasimbo</span><br>
+					<input type="checkbox"><span id="21" onclick="getNum(21)">Drink by the beach</span><br>
+					<i class="fa fa-plus" aria-hidden="true" id="addSat"></i>
+				</div>
+				<div class="weekend-two col-xs-12 col-lg-12">
+					<h3>Sunday</h3>
+					<input type="checkbox"><span id="22" onclick="getNum(22)">Chill with fam</span><br>
+					<input type="checkbox"><span id="23" onclick="getNum(23)">Go to Church</span><br>
+					<i class="fa fa-plus" aria-hidden="true" id="addSun"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="text-center">
+		<button class="add">Add to List</button>
+		<button class="change">Change Item</button>
+	</div>
+</div>
+
+<div class="container">
+
+<script>
+	var tempNum ='';
+
+	function getNum(x){
+		tempNum = x;
+	}
+
+// HOVER AND DOUBLE CLICK ITEMS
+	$("span").on ({
+
+		mouseover: function(){
+			$(this).css("font-style", "italic"); },
+
+		mouseout: function(){
+			$(this).css("font-style", "normal"); },
+
+		dblclick: function(){
+			$(this).html("<input type='text' value='"+ $(this).text() +"' id='input"+ tempNum +"'>"); }
+
+		// $(this).html("<input type='text' value='"+ $(this).text() +"'>"); }
+	});
+
+// EDIT ITEMS
+	$(".change").click(function(){
+
+		alert("Are you sure?");
+		var temp = $('#input'+tempNum).val();
+		console.log(tempNum);
+		$('#'+tempNum).html('<span id="'+tempNum+'" onclick="getNum('+tempNum+')"></span>');
+		$('#'+tempNum).html(temp);
+
+		// $("#1").html($("input[type='text']").val());
+
+	});
+
+
+// CHECKBOX ACTIONS
+	$("input[type='checkbox']").click(function(){
+
+	    if (this.checked) {
+	        $(this).next("span").css("text-decoration", "line-through");
+	    }
+
+	    else {
+	    	$("span").css("text-decoration", "none");
+	  	}
+
+	});
+
+//ADD ITEMS	
+	$("#addMon").click(function(){
+
+		$("#addMon").replaceWith("<input type='text' value='"+ $(this).text() +"'>");		
+	});
+
+	$("#addTues").click(function(){
+
+		$("#addTues").replaceWith("<input type='text' value='"+ $(this).text() +"'>");		
+	});
+
+	$("#addWed").click(function(){
+
+		$("#addWed").replaceWith("<input type='text' value='"+ $(this).text() +"'>");		
+	});
+
+	$("#addThurs").click(function(){
+
+		$("#addThurs").replaceWith("<input type='text' value='"+ $(this).text() +"'>");		
+	});
+
+	$("#addFri").click(function(){
+
+		$("#addFri").replaceWith("<input type='text' value='"+ $(this).text() +"'>");		
+	});
+
+	$("#addSat").click(function(){
+
+		$("#addSat").replaceWith("<input type='text' value='"+ $(this).text() +"'>");		
+	});
+
+	$("#addSun").click(function(){
+
+		$("#addSun").replaceWith("<input type='text' value='"+ $(this).text() +"'>");		
+	});
+
+
+//CONFIRM ADD
+
+	$(".add").click(function(){
+
+		alert("Be sure to do this!");
+
+		$("input[type='text']").html($("input[type='text']").val());
+
+		$("span").html($("input[type='text']").val());
+		
+	});
+
+</script>
+</body>
+</html>
